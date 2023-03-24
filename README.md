@@ -1,5 +1,7 @@
 # TAM Hello World!
 
+[![TAM - API](https://img.shields.io/static/v1?label=TAM&message=API&color=b51839)](https://www.triamec.com/en/tam-api.html)
+
 This application example helps you getting started to command a *Triamec* drive.
 
 **Simulated:** Run the application without a connected drive.
