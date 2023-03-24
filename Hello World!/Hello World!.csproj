@@ -68,9 +68,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Hello World! Tutorial GP004.pdf">
-      <Link>Hello World! Tutorial GP004.pdf</Link>
-    </None>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
