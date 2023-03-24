@@ -38,7 +38,7 @@ namespace Triamec.Tam.Samples {
 			System.Windows.Forms.Label label1;
 			System.Windows.Forms.GroupBox measurementGroupBox;
 			System.Windows.Forms.Label label4;
-			this._velocityTrackBar = new System.Windows.Forms.TrackBar();
+			this._velocitySlider = new System.Windows.Forms.TrackBar();
 			this._moveNegativeButton = new System.Windows.Forms.Button();
 			this._movePositiveButton = new System.Windows.Forms.Button();
 			this._positionBox = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@ namespace Triamec.Tam.Samples {
 			label4 = new System.Windows.Forms.Label();
 			menuStrip.SuspendLayout();
 			motionGroupBox.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this._velocityTrackBar)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this._velocitySlider)).BeginInit();
 			measurementGroupBox.SuspendLayout();
 			this._driveGroupBox.SuspendLayout();
 			this.SuspendLayout();
@@ -104,7 +104,7 @@ namespace Triamec.Tam.Samples {
 			motionGroupBox.Controls.Add(label3);
 			motionGroupBox.Controls.Add(label2);
 			motionGroupBox.Controls.Add(label1);
-			motionGroupBox.Controls.Add(this._velocityTrackBar);
+			motionGroupBox.Controls.Add(this._velocitySlider);
 			motionGroupBox.Controls.Add(this._moveNegativeButton);
 			motionGroupBox.Controls.Add(this._movePositiveButton);
 			resources.ApplyResources(motionGroupBox, "motionGroupBox");
@@ -128,14 +128,14 @@ namespace Triamec.Tam.Samples {
 			// 
 			// _velocityTrackBar
 			// 
-			resources.ApplyResources(this._velocityTrackBar, "_velocityTrackBar");
-			this._velocityTrackBar.LargeChange = 10;
-			this._velocityTrackBar.Maximum = 100;
-			this._velocityTrackBar.Minimum = 10;
-			this._velocityTrackBar.Name = "_velocityTrackBar";
-			this._velocityTrackBar.TickFrequency = 5;
-			this._toolTip.SetToolTip(this._velocityTrackBar, resources.GetString("_velocityTrackBar.ToolTip"));
-			this._velocityTrackBar.Value = 100;
+			resources.ApplyResources(this._velocitySlider, "_velocityTrackBar");
+			this._velocitySlider.LargeChange = 10;
+			this._velocitySlider.Maximum = 100;
+			this._velocitySlider.Minimum = 10;
+			this._velocitySlider.Name = "_velocityTrackBar";
+			this._velocitySlider.TickFrequency = 5;
+			this._toolTip.SetToolTip(this._velocitySlider, resources.GetString("_velocityTrackBar.ToolTip"));
+			this._velocitySlider.Value = 100;
 			// 
 			// _moveNegativeButton
 			// 
@@ -198,7 +198,7 @@ namespace Triamec.Tam.Samples {
 			menuStrip.PerformLayout();
 			motionGroupBox.ResumeLayout(false);
 			motionGroupBox.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this._velocityTrackBar)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this._velocitySlider)).EndInit();
 			measurementGroupBox.ResumeLayout(false);
 			measurementGroupBox.PerformLayout();
 			this._driveGroupBox.ResumeLayout(false);
@@ -213,7 +213,7 @@ namespace Triamec.Tam.Samples {
 		private System.Windows.Forms.ToolTip _toolTip;
 		private System.Windows.Forms.Button _movePositiveButton;
 		private System.Windows.Forms.GroupBox _driveGroupBox;
-		private System.Windows.Forms.TrackBar _velocityTrackBar;
+		private System.Windows.Forms.TrackBar _velocitySlider;
 		private System.Windows.Forms.Timer _timer;
 		private System.Windows.Forms.TextBox _positionBox;
 	}

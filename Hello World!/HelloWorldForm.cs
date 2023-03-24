@@ -28,10 +28,8 @@ namespace Triamec.Tam.Samples {
 
 		#region Hello world code
 		/// <summary>
-		/// The configuration file to load.
+		/// The configuration file for simulated mode.
 		/// </summary>
-		// CAUTION!
-		// The configuration must reflect your hardware environment, as a result of commissioning.
 		const string ConfigurationPath = "HelloWorld.TAMcfg";
 
 		/// <summary>
@@ -55,7 +53,7 @@ namespace Triamec.Tam.Samples {
 		/// </summary>
 		// CAUTION!
 		// Ensure the above constants are properly configured before setting this to false.
-		readonly bool _simulate = true;
+		readonly bool _simulate = false;
 
 		TamTopology _topology;
 		TamAxis _axis;
@@ -72,7 +70,7 @@ namespace Triamec.Tam.Samples {
 		/// 	<list type="bullet">
 		/// 		<item><description>Creates a TAM topology,</description></item>
 		/// 		<item><description>boots the Tria-Link,</description></item>
-		/// 		<item><description>searches for a TS151 servo-drive,</description></item>
+		/// 		<item><description>searches for a servo-drive,</description></item>
 		/// 		<item><description>loads and applies a TAM configuration.</description></item>
 		/// 	</list>
 		/// </remarks>
@@ -89,20 +87,21 @@ namespace Triamec.Tam.Samples {
 					deserializer.Load(ConfigurationPath);
 					var adapters = CreateSimulatedTriaLinkAdapters(deserializer.Configuration).First();
 					system = _topology.ConnectTo(adapters.Key, adapters.ToArray());
+					system.Identify();
+                    _topology.Load(ConfigurationPath);
 				}
 			} else {
 
 				// Add the local TAM system on this PC to the topology.
 				system = _topology.AddLocalSystem();
+				system.Identify();
 			}
 
 			// Boot the Tria-Link so that it learns about connected stations.
-			system.Identify();
 
 			// Load a TAM configuration.
 			// This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
 			// You don't need this line if the parametrization is persisted in the drive.
-			_topology.Load(ConfigurationPath);
 
 			// Find the axis with the configured name in the Tria-Link.
 			// The AsDepthFirstLeaves extension method performs a tree search an returns all instances of type TamAxis.
@@ -175,7 +174,7 @@ namespace Triamec.Tam.Samples {
 
 			// Move a distance with dedicated velocity.
 			// If the axis is just moving, it is reprogrammed with this command.
-			_axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocityTrackBar.Value * 0.01f);
+			_axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.01f);
 
 		/// <summary>
 		/// Measures the axis position and shows it in the GUI.

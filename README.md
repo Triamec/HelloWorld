@@ -1,43 +1,73 @@
-# Hello World!
-The *Hello World!* sample application helps you to start up a Triamec Drive.
+# TAM Hello World!
 
-However, since the configuration of a drive for any motor is not trivial, you may have to consult further documents. Visit our [website](https://www.triamec.com/en/documents.html) for more information.
+This application example helps you getting started to command a *Triamec* drive.
 
-## Preparation
-### Required Hardware
-In order to start up a Triamec Drive, one of the following connections/interfaces is required:
-- Tria-Link (PCI-Board)
-- USB
-- Ethernet
+**Simulated:** Run the application without a connected drive.
 
-### Connect the Drive
-1. Connect the motor, encoder and power supplies to the Drive. Further information can be found in the corresponding hardware manual.
-2. Connect the communication interface.
+**Connected:** Connect and move a real axis with a *Triamec* drive.
 
-## Software
-### Required Software
-For the programming you need an IDE. For example you can use [Microsoft Visual Studio](https://visualstudio.microsoft.com/en/).
+![TAM Hello World!](./doc/Screenshot.png)
 
-In addition you need also the TAM Software for Triamec Products. The latest version you can find [here](https://www.triamec.com/en/tam-software-support.html). Herewith, all the the required drivers will be installed.
+## Hardware Prerequisites
 
-### Configure the Drive
-The drive needs to be setup for the corresponding motor and encoder.
-1. Start the *TAM System Explorer*
-2. Comission the drive using the [Servo Drive Setup Guide](https://www.triamec.com/de/dokumente.html).
-3. **Remove** the **Axis Group** in the configuration.
-4. Save the TAM Configuration and overwrite the **`HelloWorldTamConfiguration.xml`**.
-5. **Close** the *TAM System Explorer*
+No hardware is needed when running the application as **Simulated**.
 
-## Start the *Hello World!* Application
-1. Open the `Hello World!.sln` in your IDE.
+To command a real axis, you need a *Triamec* drive with a motor and encoder connected and configured with a stable position controller. Connect the drive by *Tria-Link*, *USB* or *Ethernet*.
+
+## Software Prerequisites
+
+This project is made and built with [Microsoft Visual Studio](https://visualstudio.microsoft.com/en/).
+
+In addition you need [TAM Software](https://www.triamec.com/en/tam-software-support.html) installation.
+
+## Run the *Hello World!* Application
+
+For the **Simulated** mode, simply clone the repository, open the solution and hit run.
+
+**Connected** mode:
+
+1. Open the `Hello World!.sln`.
 2. Open the `HelloWorldForm.cs` (view code)
-3. If necessary, adjust the `Distance` constant to the cicumstances.
-4. Set the `Simulated`constant to `false`, otherwise a simulated environment will be built without any hardware. Consider, that the simulation emulates only few properties.
-5. Start the application
+3. Set the name of the axis for `AxisName`. Double check it in the register *Axes[].Information.AxisName* using the *TAM System Explorer*.
+4. Adjust the `Distance` constant to an appropriate value in the unit of the axis, considering the axis range of motion. The unit can be found at *Axes[].Parameters.PositionController.PositionUnit*
+5. Disable the simulated mode with `readonly bool _simulate = false;`.
+6. Now make sure the *TAM System Explorer* is not connected to the drive, or simply close it.
+7. Start the application.
 
 ## Operate the *Hello World!* Application
-1. Press `Enable` to switch on the control. Behind the button, the `EnableDrive()` method is called. As can be seen from the code, it takes two actions to control the axis. First the power section must be switched on, then the axis control. The same applies when switching off the regulation. 
-2. Press 'Left' and 'Right'. The motor turns 1/4 in the appropriate direction. The speed can be changed with the slider.
-3. Press `Disable`to switch off
 
+Press **Enable** to activate the axis.
 
+```csharp
+void EnableDrive() {
+
+    // Set the drive operational, i.e. switch the power section on.
+    _axis.Drive.SwitchOn();
+
+    // Reset any axis error and enable the axis controller.
+    _axis.Control(AxisControlCommands.ResetErrorAndEnable);
+}
+```
+
+Press **Left** and **Right**. The motor moves the `Distance` value in the corresponding direction. Both buttons trigger the same method. Change the speed with the slider.
+
+```csharp
+void MoveAxis(int sign) =>
+
+    // Move a distance with dedicated velocity.
+    // If the axis is just moving, it is reprogrammed with this command.
+    _axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.01f);
+```
+
+Press **Disable** to switch off the axis.
+
+```csharp
+void DisableDrive() {
+
+    // Disable the axis controller.
+    _axis.Control(AxisControlCommands.Disable);
+
+    // Switch the power section off.
+    _axis.Drive.SwitchOff();
+}
+```
