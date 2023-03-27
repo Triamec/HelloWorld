@@ -53,7 +53,7 @@ namespace Triamec.Tam.Samples {
 		/// </summary>
 		// CAUTION!
 		// Ensure the above constants are properly configured before setting this to false.
-		readonly bool _simulate = false;
+		readonly bool _simulate = true;
 
 		TamTopology _topology;
 		TamAxis _axis;
