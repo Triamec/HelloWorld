@@ -84,20 +84,24 @@ namespace Triamec.Tam.Samples {
 			TamSystem system;
 			if (_simulate) {
 				using (var deserializer = new Deserializer()) {
+
+					// Load and add a simulated TAM system as defined in the .TAMcfg file.
 					deserializer.Load(ConfigurationPath);
 					var adapters = CreateSimulatedTriaLinkAdapters(deserializer.Configuration).First();
 					system = _topology.ConnectTo(adapters.Key, adapters.ToArray());
+                    
+					// Boot the Tria-Link so that it learns about connected stations.
 					system.Identify();
-				_topology.Load(ConfigurationPath);
+					_topology.Load(ConfigurationPath);
 				}
 			} else {
 
 				// Add the local TAM system on this PC to the topology.
 				system = _topology.AddLocalSystem();
+				// Boot the Tria-Link so that it learns about connected stations.
 				system.Identify();
 			}
 
-			// Boot the Tria-Link so that it learns about connected stations.
 
 			// Load a TAM configuration.
 			// This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
