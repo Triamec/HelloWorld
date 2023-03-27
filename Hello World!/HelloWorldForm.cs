@@ -88,7 +88,7 @@ namespace Triamec.Tam.Samples {
 					var adapters = CreateSimulatedTriaLinkAdapters(deserializer.Configuration).First();
 					system = _topology.ConnectTo(adapters.Key, adapters.ToArray());
 					system.Identify();
-                    _topology.Load(ConfigurationPath);
+				_topology.Load(ConfigurationPath);
 				}
 			} else {
 
