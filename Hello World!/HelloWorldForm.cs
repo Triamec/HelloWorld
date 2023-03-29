@@ -210,11 +210,13 @@ namespace Triamec.Tam.Samples {
 
         protected override void OnFormClosed(FormClosedEventArgs e) {
             base.OnFormClosed(e);
-            try {
-                DisableDrive();
-            } catch (TamException ex) {
-                MessageBox.Show(this, ex.Message, Resources.StartupErrorCaption, MessageBoxButtons.OK,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, 0);
+            if (_axis != null) {
+                try {
+                    DisableDrive();
+                } catch (TamException ex) {
+                    MessageBox.Show(this, ex.Message, Resources.StartupErrorCaption, MessageBoxButtons.OK,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, 0);
+                }
             }
         }
         #endregion Form handler methods
