@@ -28,10 +28,8 @@ namespace Triamec.Tam.Samples {
 
 		#region Hello world code
 		/// <summary>
-		/// The configuration file to load.
+		/// The configuration file for simulated mode.
 		/// </summary>
-		// CAUTION!
-		// The configuration must reflect your hardware environment, as a result of commissioning.
 		const string ConfigurationPath = "HelloWorld.TAMcfg";
 
 		/// <summary>
@@ -72,7 +70,7 @@ namespace Triamec.Tam.Samples {
 		/// 	<list type="bullet">
 		/// 		<item><description>Creates a TAM topology,</description></item>
 		/// 		<item><description>boots the Tria-Link,</description></item>
-		/// 		<item><description>searches for a TS151 servo-drive,</description></item>
+		/// 		<item><description>searches for a servo-drive,</description></item>
 		/// 		<item><description>loads and applies a TAM configuration.</description></item>
 		/// 	</list>
 		/// </remarks>
@@ -86,23 +84,30 @@ namespace Triamec.Tam.Samples {
 			TamSystem system;
 			if (_simulate) {
 				using (var deserializer = new Deserializer()) {
+
+					// Load and add a simulated TAM system as defined in the .TAMcfg file.
 					deserializer.Load(ConfigurationPath);
 					var adapters = CreateSimulatedTriaLinkAdapters(deserializer.Configuration).First();
 					system = _topology.ConnectTo(adapters.Key, adapters.ToArray());
+                    
+					// Boot the Tria-Link so that it learns about connected stations.
+					system.Identify();
 				}
+
+				// Load a TAM configuration.
+				// This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
+				_topology.Load(ConfigurationPath);
 			} else {
 
 				// Add the local TAM system on this PC to the topology.
 				system = _topology.AddLocalSystem();
+
+				// Boot the Tria-Link so that it learns about connected stations.
+				system.Identify();
+
+				// Don't load TAM configuration, assuming that the drive is already configured,
+				// for example since parametrization is persisted in the drive.
 			}
-
-			// Boot the Tria-Link so that it learns about connected stations.
-			system.Identify();
-
-			// Load a TAM configuration.
-			// This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
-			// You don't need this line if the parametrization is persisted in the drive.
-			_topology.Load(ConfigurationPath);
 
 			// Find the axis with the configured name in the Tria-Link.
 			// The AsDepthFirstLeaves extension method performs a tree search an returns all instances of type TamAxis.
@@ -175,7 +180,7 @@ namespace Triamec.Tam.Samples {
 
 			// Move a distance with dedicated velocity.
 			// If the axis is just moving, it is reprogrammed with this command.
-			_axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocityTrackBar.Value * 0.01f);
+			_axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.01f);
 
 		/// <summary>
 		/// Measures the axis position and shows it in the GUI.
