@@ -53,7 +53,7 @@ namespace Triamec.Tam.Samples {
 		/// </summary>
 		// CAUTION!
 		// Ensure the above constants are properly configured before setting this to false.
-		readonly bool _simulate = true;
+		readonly bool _offline = true;
 
 		TamTopology _topology;
 		TamAxis _axis;
@@ -82,7 +82,7 @@ namespace Triamec.Tam.Samples {
 			components.Add(_topology);
 
 			TamSystem system;
-			if (_simulate) {
+			if (_offline) {
 				using (var deserializer = new Deserializer()) {
 
 					// Load and add a simulated TAM system as defined in the .TAMcfg file.
@@ -121,7 +121,7 @@ namespace Triamec.Tam.Samples {
 			_axis.ControlSystemTreatment.Override(enabled: true);
 
 			// Simulation always starts up with LinkNotReady error, which we acknowledge.
-			if (_simulate) _axis.Drive.ResetFault();
+			if (_offline) _axis.Drive.ResetFault();
 
 			// Get the register layout of the axis
 			// and cast it to the RLID-specific register layout.
