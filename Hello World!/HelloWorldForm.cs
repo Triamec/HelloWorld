@@ -92,20 +92,22 @@ namespace Triamec.Tam.Samples {
                     
 					// Boot the Tria-Link so that it learns about connected stations.
 					system.Identify();
-					_topology.Load(ConfigurationPath);
 				}
+
+				// Load a TAM configuration.
+				// This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
+				_topology.Load(ConfigurationPath);
 			} else {
 
 				// Add the local TAM system on this PC to the topology.
 				system = _topology.AddLocalSystem();
+
 				// Boot the Tria-Link so that it learns about connected stations.
 				system.Identify();
+
+				// Don't load TAM configuration, assuming that the drive is already configured,
+				// for example since parametrization is persisted in the drive.
 			}
-
-
-			// Load a TAM configuration.
-			// This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
-			// You don't need this line if the parametrization is persisted in the drive.
 
 			// Find the axis with the configured name in the Tria-Link.
 			// The AsDepthFirstLeaves extension method performs a tree search an returns all instances of type TamAxis.
