@@ -4,7 +4,7 @@
 
 This application example helps you getting started to command a *Triamec* drive.
 
-**Simulated:** Run the application without a connected drive.
+**Offline:** Run the application without a connected drive using a simulation.
 
 **Connected:** Connect and move a real axis with a *Triamec* drive.
 
@@ -12,7 +12,7 @@ This application example helps you getting started to command a *Triamec* drive.
 
 ## Hardware Prerequisites
 
-No hardware is needed when running the application as **Simulated**.
+No hardware is needed when running the application as **Offline**.
 
 To command a real axis, you need a *Triamec* drive with a motor and encoder connected and configured with a stable position controller. Connect the drive by *Tria-Link*, *USB* or *Ethernet*.
 
@@ -24,7 +24,7 @@ In addition you need [TAM Software](https://www.triamec.com/en/tam-software-supp
 
 ## Run the *Hello World!* Application
 
-For the **Simulated** mode, simply clone the repository, open the solution and hit run.
+For the **Offline** mode, simply clone the repository, open the solution and hit run.
 
 **Connected** mode:
 
@@ -32,7 +32,7 @@ For the **Simulated** mode, simply clone the repository, open the solution and h
 2. Open the `HelloWorldForm.cs` (view code)
 3. Set the name of the axis for `AxisName`. Double check it in the register *Axes[].Information.AxisName* using the *TAM System Explorer*.
 4. Adjust the `Distance` constant to an appropriate value in the unit of the axis, considering the axis range of motion. The unit can be found at *Axes[].Parameters.PositionController.PositionUnit*
-5. Disable the simulated mode with `readonly bool _simulate = false;`.
+5. Disable offline mode with `readonly bool _offline = false;`.
 6. Now make sure the *TAM System Explorer* is not connected to the drive, or simply close it.
 7. Start the application.
 
