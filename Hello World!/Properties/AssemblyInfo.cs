@@ -1,6 +1,4 @@
-﻿// Copyright © 2007 Triamec Motion AG
-
-using System;
+﻿using System;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;

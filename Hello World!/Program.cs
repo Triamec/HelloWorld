@@ -1,5 +1,3 @@
-// Copyright © 2007 Triamec Motion AG
-
 using System;
 using System.Windows.Forms;
 

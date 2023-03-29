@@ -1,6 +1,4 @@
-﻿// Copyright © 2007 Triamec Motion AG
-
-namespace Triamec.Tam.Samples {
+﻿namespace Triamec.Tam.Samples {
     partial class HelloWorldForm {
         /// <summary>
         /// Required designer variable.
