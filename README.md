@@ -58,6 +58,7 @@ void MoveAxis(int sign) =>
 
     // Move a distance with dedicated velocity.
     // If the axis is just moving, it is reprogrammed with this command.
+    // Please note that in offline mode, the velocity parameter is ignored.
     _axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.01f);
 ```
 
