@@ -187,7 +187,7 @@ namespace Triamec.Tam.Samples {
             var register = (Axis)_axis.Register;
             var positionRegister = register.Signals.PositionController.MasterPosition;
             var position = positionRegister.Read();
-            _positionBox.Text = $"{position:F2} {_unit}";
+            _positionBox.Text = $"{position:F6} {_unit}";
         }
         #endregion Hello world code
 
