@@ -151,9 +151,11 @@ namespace Triamec.Tam.Samples {
 
         /// <exception cref="TamException">Enabling failed.</exception>
         void EnableDrive() {
+            if (_axis.Drive.Station.Link.Adapter.IsSimulated) {
 
-            // Set the drive operational, i.e. switch the power section on.
-            _axis.Drive.SwitchOn();
+                // [LEGACY] Set the drive operational, i.e. switch the power section on
+                _axis.Drive.SwitchOn();
+            }
 
             // Reset any axis error and enable the axis controller.
             _axis.Control(AxisControlCommands.ResetErrorAndEnable);
@@ -165,8 +167,11 @@ namespace Triamec.Tam.Samples {
             // Disable the axis controller.
             _axis.Control(AxisControlCommands.Disable);
 
-            // Switch the power section off.
-            _axis.Drive.SwitchOff();
+            if (_axis.Drive.Station.Link.Adapter.IsSimulated) {
+
+                // [LEGACY] Switch the power section off.
+                _axis.Drive.SwitchOff();
+            }
         }
 
         /// <summary>
