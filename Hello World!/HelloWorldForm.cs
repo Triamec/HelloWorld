@@ -49,7 +49,7 @@ namespace Triamec.Tam.Samples {
         readonly bool _offline = true;
 
         /// <summary>
-        /// The configuration file for simulated mode.
+        /// The configuration file to seed the simulation.
         /// </summary>
         const string OfflineConfigurationPath = "HelloWorld.TAMcfg";
 
