@@ -226,14 +226,18 @@ namespace Triamec.Tam.Samples {
         #endregion Form handler methods
 
         #region Button handler methods
-
-        void OnEnableButtonClick(object sender, EventArgs e) {
+        void ExecuteCommand(Action command) {
             try {
-                EnableAxis();
+                command();
             } catch (TamException ex) {
                 MessageBox.Show(ex.Message, Resources.EnablingErrorCaption, MessageBoxButtons.OK,
                     MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
             }
+        }
+
+
+        void OnEnableButtonClick(object sender, EventArgs e) {
+            ExecuteCommand(EnableAxis);
 
             // Note: a more elaborated application would change button states depending on what's the drive reporting,
             // following the MVC concept.
@@ -244,31 +248,13 @@ namespace Triamec.Tam.Samples {
         void OnDisableButtonClick(object sender, EventArgs e) {
             _moveNegativeButton.Enabled = false;
             _movePositiveButton.Enabled = false;
-            try {
-                DisableAxis();
-            } catch (TamException ex) {
-                MessageBox.Show(ex.Message, Resources.DisablingErrorCaption, MessageBoxButtons.OK,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
-            }
+            ExecuteCommand(DisableAxis);
         }
 
-        void OnMoveNegativeButtonClick(object sender, EventArgs e) {
-            try {
-                MoveAxis(-1);
-            } catch (TamException ex) {
-                MessageBox.Show(ex.Message, Resources.MoveErrorCaption, MessageBoxButtons.OK,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
-            }
-        }
+        void OnMoveNegativeButtonClick(object sender, EventArgs e) => ExecuteCommand(() => MoveAxis(-1));
 
-        void OnMovePositiveButtonClick(object sender, EventArgs e) {
-            try {
-                MoveAxis(1);
-            } catch (TamException ex) {
-                MessageBox.Show(ex.Message, Resources.MoveErrorCaption, MessageBoxButtons.OK,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
-            }
-        }
+        void OnMovePositiveButtonClick(object sender, EventArgs e) => ExecuteCommand(() => MoveAxis(1));
+
         #endregion Button handler methods
 
         #region Menu handler methods
