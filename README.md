@@ -2,12 +2,12 @@
 
 [![TAM - API](https://img.shields.io/static/v1?label=TAM&message=API&color=b51839)](https://www.triamec.com/en/tam-api.html)
 
+This application example helps you getting started to command a *Triamec* drive.
+
 > [!NOTE]
-> Modified version of the TAM Software Samples with a focus on hands-on experience.
+> Modified version with a focus on hands-on experience.
 >
 > Exposes two additional measurements and two additional buttons with the code behind to be implemented by the students.
-
-This application example helps you getting started to command a *Triamec* drive.
 
 **Offline:** Run the application without a connected drive using a simulation.
 
