@@ -26,11 +26,6 @@ namespace Triamec.Tam.Samples {
 
         #region Hello world code
         /// <summary>
-        /// The configuration file for simulated mode.
-        /// </summary>
-        const string ConfigurationPath = "HelloWorld.TAMcfg";
-
-        /// <summary>
         /// The name of the axis this demo works with.
         /// </summary>
         // CAUTION!
@@ -52,6 +47,11 @@ namespace Triamec.Tam.Samples {
         // CAUTION!
         // Ensure the above constants are properly configured before setting this to false.
         readonly bool _offline = true;
+
+        /// <summary>
+        /// The configuration file for simulated mode.
+        /// </summary>
+        const string OfflineConfigurationPath = "HelloWorld.TAMcfg";
 
         TamTopology _topology;
         TamAxis _axis;
@@ -84,7 +84,7 @@ namespace Triamec.Tam.Samples {
                 using (var deserializer = new Deserializer()) {
 
                     // Load and add a simulated TAM system as defined in the .TAMcfg file.
-                    deserializer.Load(ConfigurationPath);
+                    deserializer.Load(OfflineConfigurationPath);
                     var adapters = CreateSimulatedTriaLinkAdapters(deserializer.Configuration).First();
                     system = _topology.ConnectTo(adapters.Key, adapters.ToArray());
 
@@ -94,7 +94,7 @@ namespace Triamec.Tam.Samples {
 
                 // Load a TAM configuration.
                 // This API doesn't feature GUI. Refer to the Gear Up! example which uses an API exposing a GUI.
-                _topology.Load(ConfigurationPath);
+                _topology.Load(OfflineConfigurationPath);
             } else {
 
                 // Add the local TAM system on this PC to the topology.
