@@ -124,15 +124,15 @@
             resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
             // 
-            // _velocityTrackBar
+            // _velocitySlider
             // 
-            resources.ApplyResources(this._velocitySlider, "_velocityTrackBar");
+            resources.ApplyResources(this._velocitySlider, "_velocitySlider");
             this._velocitySlider.LargeChange = 10;
             this._velocitySlider.Maximum = 100;
             this._velocitySlider.Minimum = 10;
-            this._velocitySlider.Name = "_velocityTrackBar";
+            this._velocitySlider.Name = "_velocitySlider";
             this._velocitySlider.TickFrequency = 5;
-            this._toolTip.SetToolTip(this._velocitySlider, resources.GetString("_velocityTrackBar.ToolTip"));
+            this._toolTip.SetToolTip(this._velocitySlider, resources.GetString("_velocitySlider.ToolTip"));
             this._velocitySlider.Value = 100;
             // 
             // _moveNegativeButton
