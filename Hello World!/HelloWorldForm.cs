@@ -226,6 +226,7 @@ namespace Triamec.Tam.Samples {
         #endregion Form handler methods
 
         #region Button handler methods
+
         void ExecuteCommand(Action command) {
             try {
                 command();
@@ -234,7 +235,6 @@ namespace Triamec.Tam.Samples {
                     MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
             }
         }
-
 
         void OnEnableButtonClick(object sender, EventArgs e) {
             ExecuteCommand(EnableAxis);
