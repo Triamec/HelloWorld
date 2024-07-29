@@ -150,7 +150,7 @@ namespace Triamec.Tam.Samples {
             SimulationFactory.FromConfiguration(configuration, null);
 
         /// <exception cref="TamException">Enabling failed.</exception>
-        void EnableDrive() {
+        void EnableAxis() {
             if (_axis.Drive.Station.Link.Adapter.IsSimulated) {
 
                 // [LEGACY] Set the drive operational, i.e. switch the power section on
@@ -162,7 +162,7 @@ namespace Triamec.Tam.Samples {
         }
 
         /// <exception cref="TamException">Disabling failed.</exception>
-        void DisableDrive() {
+        void DisableAxis() {
 
             // Disable the axis controller.
             _axis.Control(AxisControlCommands.Disable);
@@ -216,7 +216,7 @@ namespace Triamec.Tam.Samples {
             base.OnFormClosed(e);
             if (_axis != null) {
                 try {
-                    DisableDrive();
+                    DisableAxis();
                 } catch (TamException ex) {
                     MessageBox.Show(this, ex.Message, Resources.StartupErrorCaption, MessageBoxButtons.OK,
                         MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, 0);
@@ -229,7 +229,7 @@ namespace Triamec.Tam.Samples {
 
         void OnEnableButtonClick(object sender, EventArgs e) {
             try {
-                EnableDrive();
+                EnableAxis();
             } catch (TamException ex) {
                 MessageBox.Show(ex.Message, Resources.EnablingErrorCaption, MessageBoxButtons.OK,
                     MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
@@ -245,7 +245,7 @@ namespace Triamec.Tam.Samples {
             _moveNegativeButton.Enabled = false;
             _movePositiveButton.Enabled = false;
             try {
-                DisableDrive();
+                DisableAxis();
             } catch (TamException ex) {
                 MessageBox.Show(ex.Message, Resources.DisablingErrorCaption, MessageBoxButtons.OK,
                     MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
