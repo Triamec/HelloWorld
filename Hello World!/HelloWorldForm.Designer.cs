@@ -35,10 +35,16 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.GroupBox measurementGroupBox;
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label4;
+            System.Windows.Forms.Button f1Button;
+            System.Windows.Forms.Button f2Button;
             this._velocitySlider = new System.Windows.Forms.TrackBar();
             this._moveNegativeButton = new System.Windows.Forms.Button();
             this._movePositiveButton = new System.Windows.Forms.Button();
+            this._measurement3Box = new System.Windows.Forms.TextBox();
+            this._measurement2Box = new System.Windows.Forms.TextBox();
             this._positionBox = new System.Windows.Forms.TextBox();
             this._toolTip = new System.Windows.Forms.ToolTip(this.components);
             this._driveGroupBox = new System.Windows.Forms.GroupBox();
@@ -53,7 +59,11 @@
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             measurementGroupBox = new System.Windows.Forms.GroupBox();
+            label6 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            f1Button = new System.Windows.Forms.Button();
+            f2Button = new System.Windows.Forms.Button();
             menuStrip.SuspendLayout();
             motionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._velocitySlider)).BeginInit();
@@ -153,11 +163,27 @@
             // 
             // measurementGroupBox
             // 
+            measurementGroupBox.Controls.Add(this._measurement3Box);
+            measurementGroupBox.Controls.Add(this._measurement2Box);
             measurementGroupBox.Controls.Add(this._positionBox);
+            measurementGroupBox.Controls.Add(label6);
+            measurementGroupBox.Controls.Add(label5);
             measurementGroupBox.Controls.Add(label4);
             resources.ApplyResources(measurementGroupBox, "measurementGroupBox");
             measurementGroupBox.Name = "measurementGroupBox";
             measurementGroupBox.TabStop = false;
+            // 
+            // _measurement3Box
+            // 
+            resources.ApplyResources(this._measurement3Box, "_measurement3Box");
+            this._measurement3Box.Name = "_measurement3Box";
+            this._measurement3Box.ReadOnly = true;
+            // 
+            // _measurement2Box
+            // 
+            resources.ApplyResources(this._measurement2Box, "_measurement2Box");
+            this._measurement2Box.Name = "_measurement2Box";
+            this._measurement2Box.ReadOnly = true;
             // 
             // _positionBox
             // 
@@ -165,10 +191,34 @@
             this._positionBox.Name = "_positionBox";
             this._positionBox.ReadOnly = true;
             // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
+            // 
+            // f1Button
+            // 
+            resources.ApplyResources(f1Button, "f1Button");
+            f1Button.Name = "f1Button";
+            f1Button.UseVisualStyleBackColor = true;
+            f1Button.Click += new System.EventHandler(this.OnF1ButtonClick);
+            // 
+            // f2Button
+            // 
+            resources.ApplyResources(f2Button, "f2Button");
+            f2Button.Name = "f2Button";
+            f2Button.UseVisualStyleBackColor = true;
+            f2Button.Click += new System.EventHandler(this.OnF2ButtonClick);
             // 
             // _driveGroupBox
             // 
@@ -189,6 +239,8 @@
             this.Controls.Add(motionGroupBox);
             this.Controls.Add(this._driveGroupBox);
             this.Controls.Add(menuStrip);
+            this.Controls.Add(f2Button);
+            this.Controls.Add(f1Button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = menuStrip;
             this.Name = "HelloWorldForm";
@@ -214,6 +266,8 @@
         private System.Windows.Forms.TrackBar _velocitySlider;
         private System.Windows.Forms.Timer _timer;
         private System.Windows.Forms.TextBox _positionBox;
+        private System.Windows.Forms.TextBox _measurement3Box;
+        private System.Windows.Forms.TextBox _measurement2Box;
     }
 }
 

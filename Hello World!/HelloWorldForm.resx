@@ -453,6 +453,60 @@
   <metadata name="measurementGroupBox.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="_measurement3Box.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="_measurement3Box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 72</value>
+  </data>
+  <data name="_measurement3Box.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 20</value>
+  </data>
+  <data name="_measurement3Box.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="_measurement3Box.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;_measurement3Box.Name" xml:space="preserve">
+    <value>_measurement3Box</value>
+  </data>
+  <data name="&gt;&gt;_measurement3Box.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_measurement3Box.Parent" xml:space="preserve">
+    <value>measurementGroupBox</value>
+  </data>
+  <data name="&gt;&gt;_measurement3Box.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="_measurement2Box.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="_measurement2Box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 46</value>
+  </data>
+  <data name="_measurement2Box.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 20</value>
+  </data>
+  <data name="_measurement2Box.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="_measurement2Box.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;_measurement2Box.Name" xml:space="preserve">
+    <value>_measurement2Box</value>
+  </data>
+  <data name="&gt;&gt;_measurement2Box.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_measurement2Box.Parent" xml:space="preserve">
+    <value>measurementGroupBox</value>
+  </data>
+  <data name="&gt;&gt;_measurement2Box.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="_positionBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -478,7 +532,73 @@
     <value>measurementGroupBox</value>
   </data>
   <data name="&gt;&gt;_positionBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="label6.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 75</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Meas 3</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>measurementGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="label5.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Meas 2</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>measurementGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="label4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -514,7 +634,7 @@
     <value>13, 261</value>
   </data>
   <data name="measurementGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 46</value>
+    <value>267, 104</value>
   </data>
   <data name="measurementGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -533,6 +653,72 @@
   </data>
   <data name="&gt;&gt;measurementGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <metadata name="f1Button.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="f1Button.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 14.25pt, style=Bold, Italic</value>
+  </data>
+  <data name="f1Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="f1Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 371</value>
+  </data>
+  <data name="f1Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 50</value>
+  </data>
+  <data name="f1Button.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="f1Button.Text" xml:space="preserve">
+    <value>F&amp;1</value>
+  </data>
+  <data name="&gt;&gt;f1Button.Name" xml:space="preserve">
+    <value>f1Button</value>
+  </data>
+  <data name="&gt;&gt;f1Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;f1Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;f1Button.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="f2Button.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="f2Button.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 14.25pt, style=Bold, Italic</value>
+  </data>
+  <data name="f2Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="f2Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 371</value>
+  </data>
+  <data name="f2Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 50</value>
+  </data>
+  <data name="f2Button.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="f2Button.Text" xml:space="preserve">
+    <value>F&amp;2</value>
+  </data>
+  <data name="&gt;&gt;f2Button.Name" xml:space="preserve">
+    <value>f2Button</value>
+  </data>
+  <data name="&gt;&gt;f2Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;f2Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;f2Button.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="_driveGroupBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -568,7 +754,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>292, 319</value>
+    <value>292, 441</value>
   </data>
   <data name="$this.Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Properties\App.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

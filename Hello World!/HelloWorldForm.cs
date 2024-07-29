@@ -186,14 +186,28 @@ namespace Triamec.Tam.Samples {
             // Please note that in offline mode, the velocity parameter is ignored.
             _axis.MoveRelative(Math.Sign(sign) * Distance, _velocityMaximum * _velocitySlider.Value * 0.01f);
 
+        void ExecuteF1() {
+
+            // TODO: Implement F1 function
+        }
+
+        void ExecuteF2() {
+
+            // TODO: Implement F2 function
+        }
+
         /// <summary>
-        /// Measures the axis position and shows it in the GUI.
+        /// Reads some registers and shows it in the GUI.
         /// </summary>
-        void ReadPosition() {
+        void Sample() {
             var register = (Axis)_axis.Register;
             var positionRegister = register.Signals.PositionController.MasterPosition;
             var position = positionRegister.Read();
             _positionBox.Text = $"{position:F6} {_unit}";
+
+            // TODO: read some interesting registers
+            _measurement2Box.Text = "n/a";
+            _measurement3Box.Text = "n/a";
         }
         #endregion Hello world code
 
@@ -255,6 +269,10 @@ namespace Triamec.Tam.Samples {
 
         void OnMovePositiveButtonClick(object sender, EventArgs e) => ExecuteCommand(() => MoveAxis(1));
 
+        void OnF1ButtonClick(object sender, EventArgs e) => ExecuteCommand(ExecuteF1);
+
+        void OnF2ButtonClick(object sender, EventArgs e) => ExecuteCommand(ExecuteF2);
+
         #endregion Button handler methods
 
         #region Menu handler methods
@@ -263,7 +281,7 @@ namespace Triamec.Tam.Samples {
         #endregion Menu handler methods
 
         #region Timer methods
-        void OnTimerTick(object sender, EventArgs e) => ReadPosition();
+        void OnTimerTick(object sender, EventArgs e) => Sample();
 
         #endregion Timer methods
         #endregion GUI handler methods
