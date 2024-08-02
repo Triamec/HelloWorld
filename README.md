@@ -9,9 +9,9 @@ This application example helps you getting started to command a *Triamec* drive.
 >
 > Exposes two additional measurements and two additional buttons with the code behind to be implemented by the students.
 
-**Offline:** Run the application without a connected drive using a simulation.
+**Offline** (default): Run the application without a connected drive using a simulation.
 
-**Connected:** Connect and move a real axis with a *Triamec* drive.
+**Connected**: Connect and move a real axis with a *Triamec* drive.
 
 ![TAM Hello World!](./doc/Screenshot.png)
 
@@ -26,6 +26,11 @@ To command a real axis, you need a *Triamec* drive with a motor and encoder conn
 This project is made and built with [Microsoft Visual Studio](https://visualstudio.microsoft.com/en/).
 
 In addition you need [TAM Software](https://www.triamec.com/en/tam-software-support.html) installation.
+
+> [!WARNING]
+> When downloading this code as ZIP, you possibly need to unblock the file prior unpacking.
+> ![Unblock dialog](./doc/unblock.png)
+> <br/> Otherwise, Windows Defender might block the built application from running.
 
 ## Run the *Hello World!* Application
 
