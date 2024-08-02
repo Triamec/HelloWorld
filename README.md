@@ -25,7 +25,7 @@ In addition you need [TAM Software](https://www.triamec.com/en/tam-software-supp
 > [!WARNING]
 > When downloading this code as ZIP, you possibly need to unblock the file prior unpacking.
 > ![Unblock dialog](./doc/unblock.png)
-> Otherwise, Windows Defender might block the built application from running.
+> <br/> Otherwise, Windows Defender might block the built application from running.
 
 ## Run the *Hello World!* Application
 
