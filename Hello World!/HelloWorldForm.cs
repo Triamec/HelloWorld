@@ -26,13 +26,6 @@ namespace Triamec.Tam.Samples {
 
         #region Hello world code
         /// <summary>
-        /// The name of the axis this demo works with.
-        /// </summary>
-        // CAUTION!
-        // Selecting the wrong axis can have unintended consequences.
-        const string AxisName = "X";
-
-        /// <summary>
         /// The distance to move when pressing one of the move buttons.
         /// </summary>
         // CAUTION!
@@ -110,7 +103,10 @@ namespace Triamec.Tam.Samples {
             // Find the axis with the configured name in the Tria-Link.
             // The AsDepthFirstLeaves extension method performs a tree search an returns all instances of type TamAxis.
             // "Leaves" means that the search doesn't continue within TamAxis nodes.
-            _axis = system.AsDepthFirstLeaves<TamAxis>().FirstOrDefault(a => a.Name == AxisName);
+            // CAUTION!
+            // Selecting the wrong axis can have unintended consequences.
+            // The Acquisition sample shows how to locate an axis based on its name.
+            _axis = system.AsDepthFirstLeaves<TamAxis>().FirstOrDefault();
             if (_axis == null) throw new TamException(Resources.NoAxisMessage);
 
             // Most drives get integrated into a real time control system. Accessing them via TAM API like we do here is considered
