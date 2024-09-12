@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Triamec.Tam.Configuration;
@@ -74,10 +75,11 @@ namespace Triamec.Tam.Samples {
 
             TamSystem system;
             if (_offline) {
+                string executablePath = AppDomain.CurrentDomain.BaseDirectory;
                 using (var deserializer = new Deserializer()) {
 
                     // Load and add a simulated TAM system as defined in the .TAMcfg file.
-                    deserializer.Load(OfflineConfigurationPath);
+                    deserializer.Load(Path.Combine(executablePath, OfflineConfigurationPath));
                     var adapters = CreateSimulatedTriaLinkAdapters(deserializer.Configuration).First();
                     system = _topology.ConnectTo(adapters.Key, adapters.ToArray());
 
