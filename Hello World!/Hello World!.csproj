@@ -84,10 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Triamec.Tam.Simulation">
-      <Version>7.4.2</Version>
+      <Version>7.4.3</Version>
     </PackageReference>
     <PackageReference Include="Triamec.Tam.TriaLink">
-      <Version>7.23.3</Version>
+      <Version>7.23.5</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
